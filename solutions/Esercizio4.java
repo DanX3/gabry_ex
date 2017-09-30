@@ -13,6 +13,17 @@
 
 public class Esercizio4 {
     public static void main(String[] args) {
+        int size = Integer.parseInt(args[0]);
+        if (size <= 0)
+            return;
 
+        int currentsize = 1;
+        for (int i=0; i<size; i++) {
+            for (int j=0; j<currentsize; j++) {
+                System.out.print("* ");
+            }
+            System.out.println();
+            currentsize += 1;
+        }
     }
 }

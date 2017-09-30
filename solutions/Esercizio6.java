@@ -8,8 +8,21 @@
 //
 // java Esercizio6
 
+import java.util.Random;
+
 public class Esercizio6 {
     public static void main(String[] args) {
+        Random random = new Random(13);
+        int winCount = 0;
+        for (int i=0; i<1000000; i++) {
+            int x = random.nextInt(7);
+            int y = random.nextInt(7);
+            int z = random.nextInt(7);
+            if (x == y && x == z) {
+                winCount++;
+            }
+        }
 
+        System.out.println(winCount);
     }
 }

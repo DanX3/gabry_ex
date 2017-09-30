@@ -18,6 +18,16 @@
 
 public class Esercizio7 {
     public static void main(String[] args) {
+        int times = Integer.parseInt(args[0]);
+        String word = args[1];
 
+        if (times <= 0)
+            return;
+
+        while (!word.isEmpty() && times > 0) {
+            System.out.println(word);
+            word = word.substring(0, word.length()-1);
+            times--;
+        }
     }
 }
