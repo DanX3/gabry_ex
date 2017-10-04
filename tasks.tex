@@ -36,4 +36,87 @@ modo il makefile e osserva le soluzioni da me fornite. Anche se il programma
 termina con successo, alcuni risultati potrebbero differire dai tuoi.
 Fai attenzione e in bocca al lupo!
 
+
+\section*{Esercizi Java}
+Di seguito elechero' una serie di esercizi riguardante la Programmazione a
+oggetti (OOP). Questi richiedono una maggiore conoscenza di Java e
+possono essere in realta' essere risolti in modi diversi, non usando comunque la
+OOP, percio' cerca di usare il paradigma ad oggetti ove possibile
+
+\subsection*{Ereditarieta'}
+\begin{verbatim}
+Object
+    AbstractCollection
+        AbstractList
+            ArrayList
+\end{verbatim}
+Un elemento chiave della OOP e' la capacita' di creare superclassi estese di
+volta in volta in base al problema da risolvere. Cio' porta all'efficiente
+propagazione di una modifica verso tutte le sottoclassi: se in una nuova
+versione di Java si decide che un oggetto debba avere un parametro aggiuntivo,
+modificando la classe \textit{Object} si propaga la modifica a tutto cio' che e'
+un oggetto (in questo caso veramente qualsiasi cosa). Cosi' come i miglioramenti
+si propagano anche gli errori, quindi parti disegnando bene il tuo sistema. \\
+Cerchiamo di esplorare l'efficienza dell'ereditarieta'.
+
+\subsection*{Polimorfismo}
+Attraverso le interfacce, e' possibile scrivere una serie di metodi che una
+classe deve avere. Una classe puo' implementare piu' interfacce ed e' quindi
+meno vincolante dell'ereditarieta' che la limita a una. Vedila piu'
+semplicemente come un pezzo di un puzzle che posso attaccare alla classe
+\textit{``Se mi implementi questi metodi, ti posso considerare come
+quell'interfaccia''} \\
+Inoltre una stessa interfaccia puo' essere implementata da piu' classi. Tutte
+queste classi percio' possono essere considerate come quella stessa interfaccia,
+ma sono effettivamente diverse. Un esempio sara' piu' chiaro:
+\begin{verbatim}
+Shape
+ -> Circle
+ -> Square
+ -> Triangle
+\end{verbatim}
+Tutte le forme, Circle, Square e Triangle sono classi diverse che implementano
+la stessa interfaccia \textit{Shape}. E' possibile comunque avere un array di
+Shape e popolarlo con tutte e 3 le classi.
+\begin{verbatim}
+Shape s = new Triangle();
+\end{verbatim}
+e' una sintassi perfettamente valida, poiche' Triangle puo' essere
+effettivamente visto come Shape.
+
+\newpage
+
+\subsection*{Esercizio 1}
+Implementare una classe \textit{Person} strutturata come segue
+\begin{verbatim}
+class Person
+    Person(String name, String surname)
+    String getName()
+    String getSurname()
+    void sayHi()
+\end{verbatim}
+dove sayHi() stampi a schermo il nome e il cognome della persona.
+ 
+In seguito scrivi una classe \textit{Student} che includa anche un campo intero
+\textit{badge\_number} con relativo getter (il metodo che restituisce il
+campo).\\
+Sempre ereditando da \textit{Person} crea anche una classe \textit{Teacher} con
+un array di stringhe dei corsi di cui di occupa. \\
+Nel main crea un array di \textit{Person} e popolalo con 2 persone, 3 studenti e
+un insegnante. Tutti dovranno dire il proprio nome. \\
+Ipotizza che passi del tempo e l'idea di persona non ti soddisfa piu': ti serve
+anche un campo che ne registri il codice fiscale. Effettua le dovute modifiche
+in modo che anche le sottoclassi siano preparate a ricevere un codice fiscale in
+input (crea altri costruttori o modifica l'originale). \\ \\
+\begin{itemize}
+    \item Nota che in tutte le tue istanze e' presente il metodo \textit{sayHi()} grazie
+all'ereditarieta'. Nota anche che dopo aver fatto una modifica a un costruttore,
+sei costretto a rimaneggiare tutte le successive chiamate nella tua code base.
+Per piccoli progetti non e' un problema, ma quando lavori con decine di migliaia
+di righe di codice, preferiresti spendere il pomeriggio a lavorare a una nuova
+feature piuttosto che ripassare tutte le classi del progetto in cerca delle
+chiamate ai costruttori ;)
+\end{itemize}
+
+
 \end{document}
