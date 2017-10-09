@@ -1,25 +1,26 @@
 \documentclass{article}
 \usepackage{mathtools}
+\usepackage[utf8]{inputenc}
 \usepackage{verbatim}
 \begin{document}
 \title{Esercizi Programmazione}
 \maketitle
 
 \section*{Impostazione}
-Il programma e' strutturato in modo da lanciare automaticamente i programmi gia'
+Il programma è strutturato in modo da lanciare automaticamente i programmi gia'
 implementati e testarli con qualche input che ho scelto. \\
 Usando il comando \textit{make} potrai lanciare il programma che vuoi testare.
 Ad esempio
 \begin{verbatim}
     make 3
 \end{verbatim}
-compilera' il file \textit{ex03.java} e cerchera' di eseguirlo con vari test da
-me scelti. Considerero' un programma completo se ha passato tutti i test \\
+compilerà il file \textit{ex03.java} e cercherà di eseguirlo con vari test da
+me scelti. Considererò un programma completo se ha passato tutti i test \\
 
 \section*{Descrizione del problema}
-Troverai tutti i file nella directory \textit{tasks} con gia' la classe
+Troverai tutti i file nella directory \textit{tasks} con già la classe
 principale implementata e la descrizione del problema. \\
-Questa avra' un titolo e la consegna. l'ultima riga rappresentera' l'input che
+Questa avrà un titolo e la consegna. l'ultima riga rappresenterà l'input che
 dovresti aspettarti con le seguenti convenzioni
 \begin{itemize}
     \item \textbf{int} per input intero
@@ -27,7 +28,7 @@ dovresti aspettarti con le seguenti convenzioni
     \item \textbf{double} per input reale
     \item \textbf{string} per input simbolico
 \end{itemize}
-Se non e' presente nessun parametro, il programma non deve leggere alcun parametro
+Se non è presente nessun parametro, il programma non deve leggere alcun parametro
 
 \section*{Soluzioni}
 Nel caso non riuscissi a risolvere il problema, ho fornito una mia soluzione
@@ -38,10 +39,10 @@ Fai attenzione e in bocca al lupo!
 
 
 \section*{Esercizi Java}
-Di seguito elechero' una serie di esercizi riguardante la Programmazione a
+Di seguito elecherò una serie di esercizi riguardante la Programmazione a
 oggetti (OOP). Questi richiedono una maggiore conoscenza di Java e
-possono essere in realta' essere risolti in modi diversi, non usando comunque la
-OOP, percio' cerca di usare il paradigma ad oggetti ove possibile
+possono essere in realtà essere risolti in modi diversi, non usando comunque la
+OOP, perciò cerca di usare il paradigma ad oggetti ove possibile
 
 \subsection*{Ereditarieta'}
 \begin{verbatim}
@@ -50,25 +51,25 @@ Object
         AbstractList
             ArrayList
 \end{verbatim}
-Un elemento chiave della OOP e' la capacita' di creare superclassi estese di
-volta in volta in base al problema da risolvere. Cio' porta all'efficiente
+Un elemento chiave della OOP è la capacità di creare superclassi estese di
+volta in volta in base al problema da risolvere. Ciò porta all'efficiente
 propagazione di una modifica verso tutte le sottoclassi: se in una nuova
 versione di Java si decide che un oggetto debba avere un parametro aggiuntivo,
-modificando la classe \textit{Object} si propaga la modifica a tutto cio' che e'
-un oggetto (in questo caso veramente qualsiasi cosa). Cosi' come i miglioramenti
+modificando la classe \textit{Object} si propaga la modifica a tutto ciò che e'
+un oggetto (in questo caso veramente qualsiasi cosa). Così come i miglioramenti
 si propagano anche gli errori, quindi parti disegnando bene il tuo sistema. \\
 Cerchiamo di esplorare l'efficienza dell'ereditarieta'.
 
 \subsection*{Polimorfismo}
-Attraverso le interfacce, e' possibile scrivere una serie di metodi che una
-classe deve avere. Una classe puo' implementare piu' interfacce ed e' quindi
-meno vincolante dell'ereditarieta' che la limita a una. Vedila piu'
+Attraverso le interfacce, è possibile scrivere una serie di metodi che una
+classe deve avere. Una classe può implementare piu' interfacce ed è quindi
+meno vincolante dell'ereditarietà che la limita a una. Vedila piu'
 semplicemente come un pezzo di un puzzle che posso attaccare alla classe
 \textit{``Se mi implementi questi metodi, ti posso considerare come
 quell'interfaccia''} \\
-Inoltre una stessa interfaccia puo' essere implementata da piu' classi. Tutte
-queste classi percio' possono essere considerate come quella stessa interfaccia,
-ma sono effettivamente diverse. Un esempio sara' piu' chiaro:
+Inoltre una stessa interfaccia può essere implementata da piu' classi. Tutte
+queste classi perciò possono essere considerate come quella stessa interfaccia,
+ma sono effettivamente diverse. Un esempio sarà piu' chiaro:
 \begin{verbatim}
 Shape
  -> Circle
@@ -81,7 +82,7 @@ Shape e popolarlo con tutte e 3 le classi.
 \begin{verbatim}
 Shape s = new Triangle();
 \end{verbatim}
-e' una sintassi perfettamente valida, poiche' Triangle puo' essere
+è una sintassi perfettamente valida, poichè Triangle può essere
 effettivamente visto come Shape.
 
 \newpage
@@ -91,7 +92,10 @@ Sempre attraverso l'ereditarieta', una sottoclasse non reinventa la ruota da 0
 ma si ritrova a sua disposizione metodi e parametri che le superclassi hanno
 scelto di rendere pubblici o protetti. In questo senso tutti i dettagli
 implementativi delle superclassi vengono nascosti e ne viene quindi garantito il
-corretto funzionamento. 
+corretto funzionamento.
+
+\newpage
+
 \subsection*{Esercizio 1}
 Implementare una classe \textit{Person} strutturata come segue
 \begin{verbatim}
@@ -102,7 +106,7 @@ class Person
     void sayHi()
 \end{verbatim}
 dove sayHi() stampi a schermo il nome e il cognome della persona.
- 
+
 In seguito scrivi una classe \textit{Student} che includa anche un campo intero
 \textit{badge\_number} con relativo getter (il metodo che restituisce il
 campo).\\
@@ -115,14 +119,61 @@ anche un campo che ne registri il codice fiscale. Effettua le dovute modifiche
 in modo che anche le sottoclassi siano preparate a ricevere un codice fiscale in
 input (crea altri costruttori o modifica l'originale). \\ \\
 \begin{itemize}
-    \item Nota che in tutte le tue istanze e' presente il metodo \textit{sayHi()} grazie
+    \item Nota che in tutte le tue istanze è presente il metodo \textit{sayHi()} grazie
 all'ereditarieta'. Nota anche che dopo aver fatto una modifica a un costruttore,
 sei costretto a rimaneggiare tutte le successive chiamate nella tua code base.
-Per piccoli progetti non e' un problema, ma quando lavori con decine di migliaia
+Per piccoli progetti non è un problema, ma quando lavori con decine di migliaia
 di righe di codice, preferiresti spendere il pomeriggio a lavorare a una nuova
 feature piuttosto che ripassare tutte le classi del progetto in cerca delle
 chiamate ai costruttori ;)
 \end{itemize}
 
+\subsection*{Esercizio 2}
+Crea due interfacce una chiamata \textit{Quackable} e una \textit{Swimmable}.
+Crea successivamente una classe papera che implementi l'interfaccia \textit{Swimmable}
+stampando il nome del metodo per accertarne la chiamata.. \\
+Crea due sottoclassi di papera che implementino l'interfaccia \textit{Quackable} ritornando
+come floating point la velocità di nuoto. Crea una terza classe papera che
+erediti da papera ma non implementi il metodo \textit{Quack}.  \\
+Istanzia un oggetto per classe e fai un Array di \textit{Swimmable} e un array 
+di \textit{Quackable} chiamandone i relativi metodi stampando i risultati a schermo. 
+Gli array devono contenere tutti gli oggetti che possono
+starci.
+
+\newpage
+\subsection*{Esercizio 3}
+Crea una classe astratta \textit{macchina} con i metodi riportati di seguito. 
+Questi medodi dovranno stampare solo il proprio nome per testimoniare
+la loro chiamata. \\
+\begin{verbatim}
+Car
+    drive()
+    brake()
+    accelerate()
+\end{verbatim}
+Aggiungi i metodi astratti \textit{getSpeed} e \textit{getName} che obblighino
+le sottoclassi a fornire dei valori. Crea successivamente 2 sottoclassi che
+implementino questi metodi.
+Nel main, chiama tutti i metodi di entrambe le macchine per testarne il funzionamento.
+
+\subsection*{Esercizio 4}
+Sulla false riga dell'esercizio precedente, crea una classe astratta
+\textit{Car} che abbia come metodi
+\begin{verbatim}
+abstract class Car
+    void turnOn();
+    void engineNoise();
+\end{verbatim}
+
+Classi altrettanto astratte dovranno implementare il
+metodo \textit{engineNoise} di \textit{Car}: una Fiat e una Audi. \\
+Non puoi ancora istanziare ne Fiat ne Audi poichè sono ancora classi astratte. Crea un modello d'auto per queste
+sottoclassi che implementino il metodo \textit{turnOn}, stampando a schermo una stringa
+nel formato 
+\begin{verbatim}
+<nome modello> has started
+\end{verbatim}
+Il main dovrà istanziare un oggetto per ogni modello e testarne il corretto
+funzionamento.
 
 \end{document}
