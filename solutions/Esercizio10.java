@@ -17,7 +17,21 @@
 // java Esercizio10 str
 
 public class Esercizio10 {
-    public static void main(String[] args) {
 
+    static char getMagnitudeChar(int m) {
+        switch(m) {
+            case 0: return ' ';
+            case 1: return 'K';
+            case 2: return 'M';
+            case 3: return 'G';
+            case 4: return 'T';
+        }
+        return 'T';
+    }
+
+    public static void main(String[] args) {
+        int zeros = args[0].lastIndexOf('0');
+        int magnitude = zeros / 3;
+        System.out.println("1" + "00".substring(0, (zeros % 3)) + getMagnitudeChar(magnitude));
     }
 }
