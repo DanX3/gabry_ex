@@ -1,7 +1,7 @@
 all:
 	@echo "Uso corretto: make <numero esercizio>"
 
-allex: 1 2 3 4 5 6 7 9 10
+allex: 1 2 3 4 5 6 7
 
 1: Esercizio1.class
 	java $(subst .class,,$<) Gabry!
@@ -32,6 +32,11 @@ allex: 1 2 3 4 5 6 7 9 10
 7: Esercizio7.class
 	java $(subst .class,$(empty),$<) 2 CPU
 	java $(subst .class,$(empty),$<) 5 USB
+
+8: Esercizio8.class
+	java $(subst .class,$(empty),$<) 12
+	java $(subst .class,$(empty),$<) 321
+	java $(subst .class,$(empty),$<) 322
 
 9: Esercizio9.class
 	java $(subst .class,$(empty),$<)
