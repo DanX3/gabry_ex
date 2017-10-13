@@ -167,7 +167,7 @@ abstract class Car
 
 Classi altrettanto astratte dovranno implementare il
 metodo \textit{engineNoise} di \textit{Car}: una Fiat e una Audi. \\
-Non puoi ancora istanziare ne Fiat ne Audi poichè sono ancora classi astratte. Crea un modello d'auto per queste
+Non puoi ancora istanziare ne Fiat ne Audi poiché sono ancora classi astratte. Crea un modello d'auto per queste
 sottoclassi che implementino il metodo \textit{turnOn}, stampando a schermo una stringa
 nel formato 
 \begin{verbatim}
@@ -176,4 +176,29 @@ nel formato
 Il main dovrà istanziare un oggetto per ogni modello e testarne il corretto
 funzionamento.
 
-\end{document}
+\newpage
+
+\subsection*{Esercizio 5}
+Un pasticciere deve soddisfare le richieste dei propri clienti. \\
+Se il programma viene lanciato senza parametri, il pasticciere deve elencare
+ciò che ha in bottega. Se invece il programma viene lanciato con dell'input,
+dovrà soddisfare la richiesta del cliente, comunicando la lista dei dolci 
+scelti e il totale. \\
+Ogni dolce dovrà avere un id, una stringa con il proprio nome e un prezzo, come
+nello schema
+\begin{verbatim}
+Dolce
+    int getId()
+    String getName()
+    float getPrice()
+\end{verbatim}
+La lista del cliente sarà quindi una lista di
+interi rappresentanti i dolci. \\
+Crea una classe astratta \textit{Dolce} implementata da una classe
+\textit{Torta}. Questa dovrà avere una sottoclasse \textit{Torta al cioccolato}
+che costi un po' di piu'. Poi crea una classe astratta \textit{Pasticcino}
+implementata da \textit{Pasticcino alla Crema} e \textit{Pasticcino al
+Pistacchio}. \\
+Usando il paradigma della \textit{Factory Method} crea una classe che
+restituisca il dolce giusto in base all'id fornito.
+\end{document}  
